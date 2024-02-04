@@ -4,7 +4,7 @@ footer {
 
 .upFooterDiv {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background: #011a41;
   width: 100%;
   padding: 59px 20px 85px 20px;

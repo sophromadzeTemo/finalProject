@@ -1,8 +1,17 @@
+@media (max-width: 1200px) {
+  .sec1DownDiv {
+    max-width: 95%;
+  }
+}
 @media (max-width: 1000px) {
   main .content h1 {
     font-size: 50px;
     line-height: 50px;
     max-width: 431px;
+  }
+
+  main .content > div:first-child {
+    padding-left: 80px;
   }
 
   .section1 > div:first-child {
@@ -110,8 +119,6 @@
     flex-direction: column;
     gap: 8px;
     position: relative;
-    margin-left: 10px;
-
     cursor: pointer;
     height: 30px;
     width: 30px;
@@ -251,8 +258,9 @@
     align-items: center;
   }
 
-  .content > button {
-    bottom: 30%;
+  .nextBtn,
+  .prevBtn {
+    top: 70%;
   }
 
   .imgSlider img {
@@ -425,10 +433,12 @@
     gap: 5px;
   }
 
-  .content > button {
+  .nextBtn,
+  .prevBtn {
     max-width: 40px;
   }
-  .content i {
+  .nextBtn i,
+  .prevBtn i {
     padding: 2px;
   }
 
@@ -505,6 +515,10 @@
 
   .downFooterDiv p {
     font-size: 10px;
+  }
+
+  nav {
+    padding: 0 3px;
   }
 }
 

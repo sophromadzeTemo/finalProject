@@ -31,7 +31,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
   margin: 0 auto;
 }
@@ -59,12 +59,13 @@ main > img {
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 62px;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.01);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.11);
+  padding: 0 20px;
 }
 
 header > div {
@@ -92,10 +93,11 @@ header p {
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-top: 30px;
+  padding: 0 20px;
 }
 
 nav ul {
@@ -233,6 +235,7 @@ main .content {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  max-width: 1600px;
 }
 
 .whiteBtn {
@@ -346,20 +349,24 @@ main .content > div:first-child {
   z-index: -1;
 }
 
-.content i {
+.nextBtn i,
+.prevBtn i {
   padding: 11px;
 }
 
-.content > button {
+.nextBtn,
+.prevBtn {
   position: absolute;
   background: #cad2fc;
   color: #355efc;
   border: none;
   width: 100%;
   max-width: 76px;
+  top: 50%;
 }
 
-.content > button:hover {
+.nextBtn:hover,
+.prevBtn:hover {
   color: #cad2fc;
   background: #355efc;
   transition: 0.3s;
