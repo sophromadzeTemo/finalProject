@@ -266,6 +266,7 @@
   .imgSlider img {
     top: 0;
     max-width: 70%;
+    right: 15%;
   }
 
   .sec1DownDiv {
@@ -395,6 +396,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .section1 {
+    margin-top: 0;
+  }
+}
+
 @media (max-width: 500px) {
   #top-btn {
     width: 30px;
@@ -519,6 +526,15 @@
 
   nav {
     padding: 0 3px;
+  }
+
+  .section1 {
+    margin-top: 0;
+  }
+
+  .imgSlider img {
+    max-width: 85%;
+    right: 5%;
   }
 }
 
