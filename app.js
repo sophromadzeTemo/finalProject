@@ -183,7 +183,7 @@ updateImageDisplay();
 // Function to start automatic slideshow
 function startSlideshow() {
   setInterval(() => {
-    updateImageDisplay("next");
+    updateImageDisplay("prev");
   }, 10000); // 5000 milliseconds = 5 seconds
 }
 
