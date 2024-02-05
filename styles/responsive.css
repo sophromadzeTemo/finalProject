@@ -481,6 +481,15 @@
   .section4 form h2 {
     font-size: 30px;
   }
+
+  .dropdownIcon div {
+    width: 16px;
+    height: 1px;
+  }
+  .sec3LeftDiv button {
+    gap: 5px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 470px) {
@@ -505,15 +514,6 @@
 @media (max-width: 400px) {
   .sec1UpDiv > div {
     padding: 10px;
-  }
-
-  .dropdownIcon div {
-    width: 16px;
-    height: 1px;
-  }
-  .sec3LeftDiv button {
-    gap: 5px;
-    font-size: 12px;
   }
 
   .downFooterDiv {
