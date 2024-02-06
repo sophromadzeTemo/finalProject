@@ -37,6 +37,33 @@ vissionBtn.addEventListener("click", function () {
 });
 
 // image slider
+
+// Array of image
+const imagePaths = [
+  "/images/sliderImg1.png",
+  "/images/sliderImg2.png",
+  "/images/sliderImg3.png",
+  "/images/sliderImg4.png",
+  "/images/sliderImg5.png",
+  "/images/sliderImg6.png",
+  "/images/sliderImg7.png",
+  "/images/sliderImg8.png",
+];
+
+const sliderContainer = document.querySelector(".imgSlider");
+
+// add images to the slider
+function addImagesToSlider() {
+  imagePaths.forEach((path) => {
+    const img = document.createElement("img");
+    img.src = path;
+    sliderContainer.appendChild(img);
+  });
+}
+
+// add images to the slider
+addImagesToSlider();
+
 // Select all the images
 const images = document.querySelectorAll(".imgSlider img");
 
