@@ -357,33 +357,24 @@
             />
           </div>
           <div class="outDiv">
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="Your Phone"
-                required
-              />
-              <span id="phoneError" class="error hidden"
-                >Phone must contain 9 digits</span
-              >
-              <span id="phoneError2" class="error hidden"
-                >Phone must start with +995</span
-              >
-            </div>
-            <div>
-              <input
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="Your subject"
-                required
-              />
-              <span id="subjectError" class="error hidden"
-                >Subject must contain at least 5 characters</span
-              >
-            </div>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Your Phone"
+              pattern="\+995\d{9}"
+              title="Phone must start with +995 and contain 9 more digits"
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              placeholder="Your subject"
+              title="must be at least 5 charactes"
+              pattern=".*\S.{4,}.*"
+              required
+            />
           </div>
           <textarea
             name="message"

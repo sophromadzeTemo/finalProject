@@ -36,66 +36,7 @@ vissionBtn.addEventListener("click", function () {
   missionBtn.classList.remove("activeBtn");
 });
 
-// phone and subject inputs
-let form = document.getElementById("contactForm");
-let phoneInput = document.getElementById("phone");
-let phoneError = document.getElementById("phoneError");
-let phoneError2 = document.getElementById("phoneError2");
-let subjectInput = document.getElementById("subject");
-let subjectError = document.getElementById("subjectError");
-let textarea = document.getElementById("message");
-
-form.addEventListener("submit", function (event) {
-  let isWidthGreaterThan768 = window.innerWidth > 768;
-
-  // Subject
-  if (subjectInput.value.length < 5) {
-    event.preventDefault();
-    subjectError.classList.remove("hidden");
-    if (!isWidthGreaterThan768) {
-      textarea.style.marginTop = "-14px";
-    }
-  } else {
-    subjectError.classList.add("hidden");
-  }
-
-  // Phone
-  if (phoneInput.value.length != 13) {
-    event.preventDefault();
-    phoneError.classList.remove("hidden");
-    if (!isWidthGreaterThan768) {
-      subjectInput.style.marginTop = "-19px";
-    }
-  } else {
-    phoneError.classList.add("hidden");
-  }
-
-  if (!phoneInput.value.startsWith("+995")) {
-    event.preventDefault();
-    phoneError2.classList.remove("hidden");
-    if (!isWidthGreaterThan768) {
-      subjectInput.style.marginTop = "-19px";
-    }
-  } else {
-    phoneError2.classList.add("hidden");
-  }
-
-  // textarea
-  if (isWidthGreaterThan768) {
-    if (
-      subjectInput.value.length < 5 ||
-      phoneInput.value.length != 13 ||
-      !phoneInput.value.startsWith("+995")
-    ) {
-      textarea.style.marginTop = "-14px";
-    } else {
-      textarea.style.marginTop = "";
-    }
-  }
-});
-
 // image slider
-
 // Select all the images
 const images = document.querySelectorAll(".imgSlider img");
 
