@@ -56,15 +56,15 @@ function initializeImages() {
       img.style.opacity = "1";
     } else if (index === 1) {
       // Next image
-      img.style.transform = "translateX(-300%)";
+      img.style.transform = "translateX(-500%)";
       img.style.opacity = "0";
     } else if (index === images.length - 1) {
       // Previous image
-      img.style.transform = "translateX(300%)";
+      img.style.transform = "translateX(500%)";
       img.style.opacity = "0";
     } else {
       // All other
-      img.style.transform = "translateX(300%)";
+      img.style.transform = "translateX(500%)";
       img.style.opacity = "0";
     }
   });
@@ -86,7 +86,7 @@ function updateImageDisplay(direction) {
 
   // Transition the outgoing image
   images[outgoingIndex].style.transform =
-    direction === "next" ? "translateX(-300%)" : "translateX(300%)";
+    direction === "next" ? "translateX(-500%)" : "translateX(500%)";
   images[outgoingIndex].style.opacity = "0";
 
   // Transition the incoming (current) image
@@ -97,14 +97,14 @@ function updateImageDisplay(direction) {
   const nextIndex = (currentIndex + 1) % images.length;
   const prevIndex = (currentIndex - 1 + images.length) % images.length;
 
-  images[nextIndex].style.transform = "translateX(-300%)";
-  images[prevIndex].style.transform = "translateX(300%)";
+  images[nextIndex].style.transform = "translateX(-500%)";
+  images[prevIndex].style.transform = "translateX(500%)";
 
   // Ensure all other images are off-screen and not visible
   images.forEach((img, index) => {
     if (index !== currentIndex && index !== nextIndex && index !== prevIndex) {
       img.style.opacity = "0";
-      img.style.transform = "translateX(300%)"; // Off-screen to the right
+      img.style.transform = "translateX(500%)"; // Off-screen to the right
     }
   });
 }
