@@ -184,7 +184,7 @@ updateImageDisplay();
 function startSlideshow() {
   setInterval(() => {
     updateImageDisplay("prev");
-  }, 10000); // 5000 milliseconds = 5 seconds
+  }, 10000);
 }
 
 // Call startSlideshow to begin the automatic transitions
@@ -315,6 +315,11 @@ In a world where financial advice is often driven by fleeting trends and one-siz
 <br />
 Your financial status is not just a number on a balance sheet; it's a reflection of your life's work, your dreams, and your legacy. As your financial partner, our goal is to help you realize those dreams and secure that legacy, ensuring that your financial status is a source of confidence, not concern. Together, we can create a financial future that is not only prosperous but also fulfilling, allowing you to live the life you've always envisioned.`;
 firstExpMoreContent.prepend(newDiv);
+firstExpMoreContent.style.position = "fixed";
+firstExpMoreContent.style.top = "50%";
+firstExpMoreContent.style.left = "50%";
+firstExpMoreContent.style.transform = "translate(-50%, -50%)";
+
 newDiv.style.position = "absolute";
 newDiv.style.zIndex = -1;
 newDiv.style.fontSize = "16px";
@@ -324,4 +329,4 @@ newDiv.style.paddingLeft = "10px";
 newDiv.style.paddingRight = "10px";
 newDiv.style.color = "white";
 newDiv.style.overflowY = "auto";
-newDiv.style.maxHeight = "100vh";
+newDiv.style.height = "100vh";

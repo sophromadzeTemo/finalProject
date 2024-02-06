@@ -22,8 +22,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* scrollbar-width: thin;
-  scrollbar-color: rgba(53, 94, 252, 1) #ffffff; */
 }
 
 body {
@@ -31,7 +29,6 @@ body {
 }
 
 .wrapper {
-  /* max-width: 1200px; */
   width: 100%;
   margin: 0 auto;
 }
@@ -235,7 +232,6 @@ main .content {
   align-items: center;
   height: 100%;
   width: 100%;
-  /* overflow: hidden; */
   max-width: 1600px;
 }
 
@@ -427,7 +423,6 @@ main .content > div:first-child {
 
 .firstExpMoreContent {
   display: none;
-  position: absolute;
   background: rgba(0, 0, 0, 0.9);
   height: 100vh;
   width: 100%;
