@@ -530,6 +530,7 @@
   width: 100%;
   border-radius: 5px;
   border: 1px solid rgba(144, 157, 226, 1);
+  resize: none;
 }
 
 .inActive {
