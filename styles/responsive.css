@@ -197,9 +197,6 @@
 
   .pagesDropdown {
     display: none;
-    /* background: none;
-    position: unset;
-    margin-left: 30px; */
   }
 
   .pagesLi:hover > .pagesDropdown {
@@ -264,8 +261,8 @@
 
   .imgSlider img {
     top: 0;
-    max-width: 70%;
-    right: 15%;
+    max-width: 349px;
+    right: auto;
   }
 
   .sec1DownDiv {
@@ -395,6 +392,12 @@
   }
 }
 
+@media (max-width: 665px) {
+  .imgSlider img {
+    max-width: 314px;
+  }
+}
+
 @media (max-width: 600px) {
   .section1 {
     margin-top: 0;
@@ -491,6 +494,12 @@
   }
 }
 
+@media (max-width: 477px) {
+  .imgSlider img {
+    max-width: 277px;
+  }
+}
+
 @media (max-width: 470px) {
   .section3 h2 {
     font-size: 25px;
@@ -507,6 +516,12 @@
   }
   .section3 > div {
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 408px) {
+  .imgSlider img {
+    max-width: 243px;
   }
 }
 
@@ -529,11 +544,6 @@
 
   .section1 {
     margin-top: 0;
-  }
-
-  .imgSlider img {
-    max-width: 85%;
-    right: 5%;
   }
 }
 

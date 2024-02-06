@@ -328,14 +328,15 @@ main .content > div:first-child {
   position: absolute;
   width: 100%;
   height: auto;
+  top: 0;
 }
 
 .imgSlider img {
   position: absolute;
-  top: -223px;
-  right: 0;
+  right: 5%;
+  top: 0;
   width: 100%;
-  max-width: 563px;
+  max-width: 444px;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 0;
   z-index: -1;
