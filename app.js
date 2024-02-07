@@ -1,40 +1,74 @@
-// about us btn contents
-let storyBtn = document.getElementById("storyBtn");
-let missionBtn = document.getElementById("missionBtn");
-let vissionBtn = document.getElementById("vissionBtn");
-let storyContent = document.getElementById("storyContent");
-let missionContent = document.getElementById("missionContent");
-let vissionContent = document.getElementById("vissionContent");
+// // about us btn contents
+// let storyBtn = document.getElementById("storyBtn");
+// let missionBtn = document.getElementById("missionBtn");
+// let vissionBtn = document.getElementById("vissionBtn");
+// let storyContent = document.getElementById("storyContent");
+// let missionContent = document.getElementById("missionContent");
+// let vissionContent = document.getElementById("vissionContent");
 
-// Event listener for the Story button
-storyBtn.addEventListener("click", function () {
-  storyContent.style.display = "block";
-  missionContent.style.display = "none";
-  vissionContent.style.display = "none";
-  this.classList.add("activeBtn");
-  missionBtn.classList.remove("activeBtn");
-  vissionBtn.classList.remove("activeBtn");
-});
+// // Event listener for the Story button
+// storyBtn.addEventListener("click", function () {
+//   storyContent.style.display = "block";
+//   missionContent.style.display = "none";
+//   vissionContent.style.display = "none";
+//   this.classList.add("activeBtn");
+//   missionBtn.classList.remove("activeBtn");
+//   vissionBtn.classList.remove("activeBtn");
+// });
 
-// Event listener for the Mission button
-missionBtn.addEventListener("click", function () {
-  missionContent.style.display = "block";
-  storyContent.style.display = "none";
-  vissionContent.style.display = "none";
-  this.classList.add("activeBtn");
-  storyBtn.classList.remove("activeBtn");
-  vissionBtn.classList.remove("activeBtn");
-});
+// // Event listener for the Mission button
+// missionBtn.addEventListener("click", function () {
+//   missionContent.style.display = "block";
+//   storyContent.style.display = "none";
+//   vissionContent.style.display = "none";
+//   this.classList.add("activeBtn");
+//   storyBtn.classList.remove("activeBtn");
+//   vissionBtn.classList.remove("activeBtn");
+// });
 
-// Event listener for the Vision button
-vissionBtn.addEventListener("click", function () {
-  vissionContent.style.display = "block";
-  storyContent.style.display = "none";
-  missionContent.style.display = "none";
-  this.classList.add("activeBtn");
-  storyBtn.classList.remove("activeBtn");
-  missionBtn.classList.remove("activeBtn");
-});
+// // Event listener for the Vision button
+// vissionBtn.addEventListener("click", function () {
+//   vissionContent.style.display = "block";
+//   storyContent.style.display = "none";
+//   missionContent.style.display = "none";
+//   this.classList.add("activeBtn");
+//   storyBtn.classList.remove("activeBtn");
+//   missionBtn.classList.remove("activeBtn");
+// });
+
+// Object to map buttons to their content
+const aboutUsSections = {
+  storyBtn: "storyContent",
+  missionBtn: "missionContent",
+  vissionBtn: "vissionContent",
+};
+
+// Function to hide all content and remove active class from buttons
+function resetAboutUsSections() {
+  for (let btnId in aboutUsSections) {
+    if (aboutUsSections.hasOwnProperty(btnId)) {
+      document.getElementById(aboutUsSections[btnId]).style.display = "none";
+      document.getElementById(btnId).classList.remove("activeBtn");
+    }
+  }
+}
+
+// Function to show selected content and add active class to the selected button
+function showAboutUsSection(selectedBtnId) {
+  resetAboutUsSections(); //reset all sections
+  const selectedContentId = aboutUsSections[selectedBtnId];
+  document.getElementById(selectedContentId).style.display = "block";
+  document.getElementById(selectedBtnId).classList.add("activeBtn");
+}
+
+// Event listeners for each button
+for (let btnId in aboutUsSections) {
+  if (aboutUsSections.hasOwnProperty(btnId)) {
+    document.getElementById(btnId).addEventListener("click", function () {
+      showAboutUsSection(btnId);
+    });
+  }
+}
 
 // image slider
 
