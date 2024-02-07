@@ -70,128 +70,6 @@ for (let btnId in aboutUsSections) {
   }
 }
 
-// image slider
-
-// Array of image
-const imagePaths = [
-  "/images/sliderImg1.png",
-  "/images/sliderImg2.png",
-  "/images/sliderImg3.png",
-  "/images/sliderImg4.png",
-  "/images/sliderImg5.png",
-  "/images/sliderImg6.png",
-  "/images/sliderImg7.png",
-  "/images/sliderImg8.png",
-];
-
-const sliderContainer = document.querySelector(".imgSlider");
-
-// add images to the slider
-function addImagesToSlider() {
-  imagePaths.forEach((path) => {
-    const img = document.createElement("img");
-    img.src = path;
-    sliderContainer.appendChild(img);
-  });
-}
-
-// add images to the slider
-addImagesToSlider();
-
-// Select all the images
-const images = document.querySelectorAll(".imgSlider img");
-
-// Select the previous & next buttons
-const prevBtn = document.querySelector(".prevBtn");
-const nextBtn = document.querySelector(".nextBtn");
-
-// Start from the first image
-let currentIndex = 0;
-
-// next and previous positions of first image
-function initializeImages() {
-  images.forEach((img, index) => {
-    if (index === 0) {
-      // First image
-      img.style.transform = "translateX(0)";
-      img.style.opacity = "1";
-    } else if (index === 1) {
-      // Next image
-      img.style.transform = "translateX(-500%)";
-      img.style.opacity = "0";
-    } else if (index === images.length - 1) {
-      // Previous image
-      img.style.transform = "translateX(500%)";
-      img.style.opacity = "0";
-    } else {
-      // All other
-      img.style.transform = "translateX(500%)";
-      img.style.opacity = "0";
-    }
-  });
-}
-
-// Call this func
-initializeImages();
-
-// update the image display for sliding effect with direction
-function updateImageDisplay(direction) {
-  const outgoingIndex = currentIndex;
-
-  // Update currentIndex for next or previous image
-  if (direction === "next") {
-    currentIndex = (currentIndex + 1) % images.length;
-  } else if (direction === "prev") {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-  }
-
-  // Transition the outgoing image
-  images[outgoingIndex].style.transform =
-    direction === "next" ? "translateX(-500%)" : "translateX(500%)";
-  images[outgoingIndex].style.opacity = "0";
-
-  // Transition the incoming (current) image
-  images[currentIndex].style.transform = "translateX(0)";
-  images[currentIndex].style.opacity = "1";
-
-  // Prepare the next and previous images for the subsequent transition
-  const nextIndex = (currentIndex + 1) % images.length;
-  const prevIndex = (currentIndex - 1 + images.length) % images.length;
-
-  images[nextIndex].style.transform = "translateX(-500%)";
-  images[prevIndex].style.transform = "translateX(500%)";
-
-  // Ensure all other images are off-screen and not visible
-  images.forEach((img, index) => {
-    if (index !== currentIndex && index !== nextIndex && index !== prevIndex) {
-      img.style.opacity = "0";
-      img.style.transform = "translateX(500%)"; // Off-screen to the right
-    }
-  });
-}
-
-// Event listeners for the prev and next buttons
-prevBtn.addEventListener("click", () => {
-  updateImageDisplay("prev");
-});
-
-nextBtn.addEventListener("click", () => {
-  updateImageDisplay("next");
-});
-
-// Initially set the first image
-updateImageDisplay();
-
-// Function to start automatic slideshow
-function startSlideshow() {
-  setInterval(() => {
-    updateImageDisplay("prev");
-  }, 10000);
-}
-
-// Call startSlideshow to begin the automatic transitions
-startSlideshow();
-
 // mob versiis nav menu
 document.addEventListener("DOMContentLoaded", function () {
   const mobUlBtn = document.querySelector(".mobUlBtn");
@@ -315,7 +193,9 @@ We also recognize that your financial journey is not static. Life brings changes
 In a world where financial advice is often driven by fleeting trends and one-size-fits-all solutions, we stand apart by focusing on what truly matters—your financial health and happiness. We take pride in the relationships we build and the personalized service we offer, knowing that your success is our success.
 <br />
 <br />
-Your financial status is not just a number on a balance sheet; it's a reflection of your life's work, your dreams, and your legacy. As your financial partner, our goal is to help you realize those dreams and secure that legacy, ensuring that your financial status is a source of confidence, not concern. Together, we can create a financial future that is not only prosperous but also fulfilling, allowing you to live the life you've always envisioned.`;
+Your financial status is not just a number on a balance sheet; it's a reflection of your life's work, your dreams, and your legacy. As your financial partner, our goal is to help you realize those dreams and secure that legacy, ensuring that your financial status is a source of confidence, not concern. Together, we can create a financial future that is not only prosperous but also fulfilling, allowing you to live the life you've always envisioned. <br /><br /> <div class="circle">
+<div class="innerCircle"></div>
+</div>`;
 firstExpMoreContent.prepend(newDiv);
 firstExpMoreContent.style.position = "fixed";
 firstExpMoreContent.style.top = "50%";
@@ -332,3 +212,193 @@ newDiv.style.paddingRight = "10px";
 newDiv.style.color = "white";
 newDiv.style.overflowY = "auto";
 newDiv.style.height = "100vh";
+
+// image slider
+
+// Array of image
+const imagePaths = [
+  "/images/sliderImg1.png",
+  "/images/sliderImg2.png",
+  "/images/sliderImg3.png",
+  "/images/sliderImg4.png",
+  "/images/sliderImg5.png",
+  "/images/sliderImg6.png",
+  "/images/sliderImg7.png",
+  "/images/sliderImg8.png",
+];
+
+const sliderContainer = document.querySelector(".imgSlider");
+
+// add images to the slider
+function addImagesToSlider() {
+  imagePaths.forEach((path) => {
+    const img = document.createElement("img");
+    img.src = path;
+    sliderContainer.appendChild(img);
+  });
+}
+
+// add images to the slider
+addImagesToSlider();
+
+// Select all the images
+const images = document.querySelectorAll(".imgSlider img");
+
+// Select the previous & next buttons
+const prevBtn = document.querySelector(".prevBtn");
+const nextBtn = document.querySelector(".nextBtn");
+
+// Start from the first image
+let currentIndex = 0;
+
+// next and previous positions of first image
+function initializeImages() {
+  images.forEach((img, index) => {
+    if (index === 0) {
+      // First image
+      img.style.transform = "translateX(0)";
+      img.style.opacity = "1";
+    } else if (index === 1) {
+      // Next image
+      img.style.transform = "translateX(-500%)";
+      img.style.opacity = "0";
+    } else if (index === images.length - 1) {
+      // Previous image
+      img.style.transform = "translateX(500%)";
+      img.style.opacity = "0";
+    } else {
+      // All other
+      img.style.transform = "translateX(500%)";
+      img.style.opacity = "0";
+    }
+  });
+}
+
+// Call this func
+initializeImages();
+
+// update the image display for sliding effect with direction
+function updateImageDisplay(direction) {
+  const outgoingIndex = currentIndex;
+
+  // Update currentIndex for next or previous image
+  if (direction === "next") {
+    currentIndex = (currentIndex + 1) % images.length;
+  } else if (direction === "prev") {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+  }
+
+  // Transition the outgoing image
+  images[outgoingIndex].style.transform =
+    direction === "next" ? "translateX(-500%)" : "translateX(500%)";
+  images[outgoingIndex].style.opacity = "0";
+
+  // Transition the incoming (current) image
+  images[currentIndex].style.transform = "translateX(0)";
+  images[currentIndex].style.opacity = "1";
+
+  // Prepare the next and previous images for the subsequent transition
+  const nextIndex = (currentIndex + 1) % images.length;
+  const prevIndex = (currentIndex - 1 + images.length) % images.length;
+
+  images[nextIndex].style.transform = "translateX(-500%)";
+  images[prevIndex].style.transform = "translateX(500%)";
+
+  // Ensure all other images are off-screen and not visible
+  images.forEach((img, index) => {
+    if (index !== currentIndex && index !== nextIndex && index !== prevIndex) {
+      img.style.opacity = "0";
+      img.style.transform = "translateX(500%)"; // Off-screen to the right
+    }
+  });
+}
+
+// Event listeners for the prev and next buttons
+prevBtn.addEventListener("click", () => {
+  updateImageDisplay("prev");
+});
+
+nextBtn.addEventListener("click", () => {
+  updateImageDisplay("next");
+});
+
+// Initially set the first image
+updateImageDisplay();
+
+// Function to disable the default drag behavior
+function disableDrag(event) {
+  event.preventDefault();
+}
+
+function startDrag(event) {
+  // Check if the event is a touch event
+  const isTouchEvent =
+    event.type === "touchstart" ||
+    event.type === "touchmove" ||
+    event.type === "touchend";
+
+  // Get the correct clientX and clientY coordinates based on the event type
+  const clientX = isTouchEvent ? event.touches[0].clientX : event.clientX;
+  const clientY = isTouchEvent ? event.touches[0].clientY : event.clientY;
+
+  // Only proceed if it's a left click or a touch event
+  if (!isTouchEvent && event.button !== 0) return;
+
+  const img = event.target;
+  const startX = clientX;
+  let offsetX = 0;
+
+  // Disable transition during drag action
+  img.style.transition = "none";
+
+  // img.style.zIndex = "10";
+  img.addEventListener("dragstart", disableDrag);
+
+  function drag(event) {
+    // Get the correct clientX and clientY coordinates based on the event type
+    const newClientX = isTouchEvent ? event.touches[0].clientX : event.clientX;
+    const newClientY = isTouchEvent ? event.touches[0].clientY : event.clientY;
+
+    offsetX = newClientX - startX;
+    img.style.transform = `translateX(${offsetX}px)`;
+  }
+
+  function endDrag() {
+    document.removeEventListener(
+      isTouchEvent ? "touchmove" : "mousemove",
+      drag
+    );
+    document.removeEventListener(
+      isTouchEvent ? "touchend" : "mouseup",
+      endDrag
+    );
+    img.removeEventListener("dragstart", disableDrag);
+    img.style.transition = ""; // Re-enable transition
+    // img.style.zIndex = "1";
+
+    if (Math.abs(offsetX) > 0) {
+      updateImageDisplay(offsetX > 0 ? "next" : "prev");
+    } else {
+      initializeImages();
+    }
+  }
+
+  document.addEventListener(isTouchEvent ? "touchmove" : "mousemove", drag);
+  document.addEventListener(isTouchEvent ? "touchend" : "mouseup", endDrag);
+}
+
+// Add mousedown and touchstart event listeners to each image for the drag functionality
+images.forEach((img) => {
+  img.addEventListener("mousedown", startDrag);
+  img.addEventListener("touchstart", startDrag);
+});
+
+// Function to start automatic slideshow
+function startSlideshow() {
+  setInterval(() => {
+    updateImageDisplay("prev");
+  }, 10000);
+}
+
+// Call startSlideshow to begin the automatic transitions
+startSlideshow();

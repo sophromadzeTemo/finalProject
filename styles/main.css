@@ -339,12 +339,17 @@ main .content > div:first-child {
   max-width: 444px;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   opacity: 0;
-  z-index: -1;
+  z-index: 10;
+  cursor: grab;
+}
+
+.imgSlider img:active {
+  cursor: grabbing;
 }
 
 .imgSlider img:first-child {
   opacity: 1;
-  z-index: -1;
+  z-index: 10;
 }
 
 .nextBtn i,
@@ -439,4 +444,60 @@ main .content > div:first-child {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.circlediv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.circle {
+  position: relative;
+  height: 140px;
+  width: 140px;
+  background: linear-gradient(
+    rgb(119, 44, 44) 0%,
+    rgb(119, 44, 44) 10%,
+    rgb(51, 19, 19) 80%,
+    rgb(51, 19, 19) 100%
+  );
+  border-radius: 50%;
+  animation: upDown 1.5s infinite;
+  transition: 0.5s ease;
+  margin: 100px auto;
+}
+
+.innerCircle {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
+  width: 130px;
+  background: linear-gradient(
+    rgb(255, 92, 92) 0%,
+    rgb(119, 44, 44) 50%,
+    rgb(90, 34, 34) 100%
+  );
+  border-radius: 50%;
+  filter: blur(15px);
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  height: 60px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  bottom: -60px;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(10px);
+  animation: upAndDown 1.5s infinite;
 }
