@@ -12,10 +12,10 @@
     position: relative;
     padding: 50px 10px;
     margin-top: 30px;
-    background: url(/images/OSImage.png);
+    background: url(./images/OSImage.png);
   }
 
-  .section3::before {
+  /* .section3::before {
     content: "";
     position: absolute;
     top: 0;
@@ -27,7 +27,7 @@
     background-size: cover;
     opacity: 0.3;
     z-index: -1;
-  }
+  } */
 }
 @media (max-width: 1000px) {
   main .content h1 {
