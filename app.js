@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobUlBtn = document.querySelector(".mobUlBtn");
   const navUl = document.querySelector("nav ul");
   const body = document.body; // Get the body element
-  const allA = document.querySelectorAll("nav ul li a"); // Get all anchor elements in the nav menu
+  const allA = document.querySelectorAll("nav ul li a");
   const dropdownMobile = this.querySelector(".pagesDropdownMobile");
 
   // Toggle nav menu on mobUlBtn click

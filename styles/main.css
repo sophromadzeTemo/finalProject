@@ -322,6 +322,7 @@ main .content h1 {
 
 main .content > div:first-child {
   padding-left: 70px;
+  z-index: 15;
 }
 
 .imgSlider {
