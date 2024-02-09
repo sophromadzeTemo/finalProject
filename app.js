@@ -217,14 +217,14 @@ newDiv.style.height = "100vh";
 
 // Array of image
 const imagePaths = [
-  "/images/sliderImg1.png",
-  "/images/sliderImg2.png",
-  "/images/sliderImg3.png",
-  "/images/sliderImg4.png",
-  "/images/sliderImg5.png",
-  "/images/sliderImg6.png",
-  "/images/sliderImg7.png",
-  "/images/sliderImg8.png",
+  "./images/sliderImg1.png",
+  "./images/sliderImg2.png",
+  "./images/sliderImg3.png",
+  "./images/sliderImg4.png",
+  "./images/sliderImg5.png",
+  "./images/sliderImg6.png",
+  "./images/sliderImg7.png",
+  "./images/sliderImg8.png",
 ];
 
 const sliderContainer = document.querySelector(".imgSlider");
